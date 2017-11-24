@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 using Shouldly;
 
 namespace BuzzFizz.Test
@@ -6,19 +7,18 @@ namespace BuzzFizz.Test
     [TestFixture]
     public class BuzzFizzTests
     {
-        private readonly string BuzzOutput = "Buzz";
-        private readonly string FizzOutput = "Fizz";
-        private readonly string BuzzFizzOutput = "BuzzFizz";
+        private static readonly string BuzzOutput = "Buzz";
+        private static readonly string FizzOutput = "Fizz";
+        private static readonly string BuzzFizzOutput = BuzzOutput + FizzOutput;
 
         [Test(Description = "Check for multiples of neither 3 no 5")]
         public void BuzzFizzGetStringOutputForNeither3No5MultiplersTest()
         {
-            var value4 = 4;
-            BuzzFizz.GetStringOutput(value4).ShouldBe(value4.ToString());
-            var value7 = 7;
-            BuzzFizz.GetStringOutput(value7).ShouldBe(value7.ToString());
-            var value11 = 11;
-            BuzzFizz.GetStringOutput(value11).ShouldBe(value11.ToString());
+            var testNumbers = new List<int> {4, 7, 11};
+            foreach (var testNumber in testNumbers)
+            {
+                BuzzFizz.GetStringOutput(testNumber).ShouldBe(testNumber.ToString());
+            }
         }
 
         [Test(Description = "Check for multiples of 3")]
