@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuzzFizz", "BuzzFizz\BuzzFizz.csproj", "{8F87D48A-D1D9-4341-85E5-0E4C228952CA}"
 EndProject
@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Info", "Info", "{D870E1EF-6
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuzzFizz.App", "BuzzFizz.App\BuzzFizz.App.csproj", "{DB54E483-93D2-4B4D-8499-76387E482AFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{0BEB1D27-D08E-495B-845C-FDEEDE8FF435}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BEB1D27-D08E-495B-845C-FDEEDE8FF435}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BEB1D27-D08E-495B-845C-FDEEDE8FF435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB54E483-93D2-4B4D-8499-76387E482AFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB54E483-93D2-4B4D-8499-76387E482AFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB54E483-93D2-4B4D-8499-76387E482AFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB54E483-93D2-4B4D-8499-76387E482AFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

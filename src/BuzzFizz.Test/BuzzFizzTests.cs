@@ -3,28 +3,46 @@ using Shouldly;
 
 namespace BuzzFizz.Test
 {
+    [TestFixture]
     public class BuzzFizzTests
     {
-        [Test(Description = "This shows a possible way to write your tests")]
-        [TestCase(3, 6)]
-        [TestCase(4, 8)]
-        public void When_multiplying_numbers_by_two_then_result_is_doubled(int originalValue, int expectedValue)
-        {
-            // Arrange / Act
-            var result = originalValue * 2;
+        private readonly string BuzzOutput = "Buzz";
+        private readonly string FizzOutput = "Fizz";
+        private readonly string BuzzFizzOutput = "BuzzFizz";
 
-            // Assert
-            result.ShouldBe(expectedValue);
+        [Test(Description = "Check for multiples of neither 3 no 5")]
+        public void BuzzFizzGetStringOutputForNeither3No5MultiplersTest()
+        {
+            var value4 = 4;
+            BuzzFizz.GetStringOutput(value4).ShouldBe(value4.ToString());
+            var value7 = 7;
+            BuzzFizz.GetStringOutput(value7).ShouldBe(value7.ToString());
+            var value11 = 11;
+            BuzzFizz.GetStringOutput(value11).ShouldBe(value11.ToString());
         }
 
-        [Test]
-        public void When_the_value_is_a_multiple_of_three_then_output_should_be_buzz()
+        [Test(Description = "Check for multiples of 3")]
+        public void BuzzFizzGetStringOutputFor3MultiplerTest()
         {
-            // Arrange
+            BuzzFizz.GetStringOutput(3).ShouldBe(BuzzOutput);
+            BuzzFizz.GetStringOutput(6).ShouldBe(BuzzOutput);
+            BuzzFizz.GetStringOutput(9).ShouldBe(BuzzOutput);
+        }
 
-            // Act
+        [Test(Description = "Check for multiples of 5")]
+        public void BuzzFizzGetStringOutputFor5MultiplerTest()
+        {
+            BuzzFizz.GetStringOutput(5).ShouldBe(FizzOutput);
+            BuzzFizz.GetStringOutput(20).ShouldBe(FizzOutput);
+            BuzzFizz.GetStringOutput(100).ShouldBe(FizzOutput);
+        }
 
-            // Assert
+        [Test(Description = "Check for multiples of 3 and 5")]
+        public void BuzzFizzGetStringOutputFor3And5MultiplersTest()
+        {
+            BuzzFizz.GetStringOutput(15).ShouldBe(BuzzFizzOutput);
+            BuzzFizz.GetStringOutput(30).ShouldBe(BuzzFizzOutput);
+            BuzzFizz.GetStringOutput(60).ShouldBe(BuzzFizzOutput);
         }
     }
 }
